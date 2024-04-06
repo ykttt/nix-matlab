@@ -98,6 +98,11 @@ flake-overlays:
       }
     )
   ] ++ flake-overlays;
+  environment.systemPackages = with pkgs; [
+    # Other packages
+    matlab
+    # More packages
+  ];
 }
 ----
 
@@ -123,6 +128,11 @@ Add to your `configration.nix` (untested, but should work):
         # Your own overlays...
       }
     )
+  ];
+  environment.systemPackages = with pkgs; [
+    # Other packages
+    matlab
+    # More packages
   ];
 ----
 
