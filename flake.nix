@@ -120,7 +120,13 @@
         install -Dm644 ${./icons/hicolor/64x64/matlab.png} $out/share/icons/hicolor/64x64/apps/matlab.png
       '';
       runScript = pkgs.writeScript "matlab-runner" ((runScriptPrefix {}) + ''
-        exec $INSTALL_DIR/bin/matlab "$@"
+        # Needed in order to run and load NixOS' executables and shared objects
+        # installed to the FHS environment. Forces matlab to not use their
+        # potentially outdated and incompatible libstdc++.
+        exec env \
+          LD_PRELOAD=/lib/libstdc++.so \
+          LD_LIBRARY_PATH=/usr/lib/xorg/modules/dri/ \
+          $INSTALL_DIR/bin/matlab "$@"
       '');
       meta = metaCommon // {
         description = "Matlab itself - the GUI launcher";
