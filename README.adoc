@@ -64,9 +64,11 @@ follow one of the following paths according to your setup.
 inputs = {
   # ...
   nix-matlab = {
-    # Recommended if you also override the default nixpkgs flake, common among
-    # nixos-unstable users:
-    #inputs.nixpkgs.follows = "nixpkgs";
+    # nix-matlab's Nixpkgs input follows Nixpkgs' nixos-unstable branch. However
+    # your Nixpkgs revision might not follow the same branch. You'd want to
+    # match your Nixpkgs and nix-matlab to ensure fontconfig related
+    # compatibility. 
+    inputs.nixpkgs.follows = "nixpkgs";
     url = "gitlab:doronbehar/nix-matlab";
   };
   # ...
