@@ -55,6 +55,7 @@ pkgs:
   # Needed since 2022b
   libuuid
   libxcrypt
+  libxcrypt-legacy
 
 ]) ++ (with pkgs.xorg; [
   libSM
