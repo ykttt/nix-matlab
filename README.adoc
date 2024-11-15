@@ -1,6 +1,8 @@
 = Matlab for Nix users
 :source-highlighter: rouge
 
+IMPORTANT: Originally from https://gitlab.com/doronbehar/nix-matlab[doronbehar/nix-matlab] on GitLab.
+
 This repo is a collection of files that should help Nix and NixOS users install
 Matlab imperatively. The `matlab*` derivations provided by this repo use
 https://nixos.org/manual/nixpkgs/unstable/#sec-fhs-environments[Nixpkgs'
