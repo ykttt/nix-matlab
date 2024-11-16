@@ -57,7 +57,7 @@ pkgs:
   libxcrypt
   libxcrypt-legacy
 
-  # Needed for libdgm.so.1
+  # Needed for libdgm.so.1 in 2024b
   mesa
 
 ]) ++ (with pkgs.xorg; [
