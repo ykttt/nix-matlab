@@ -35,7 +35,7 @@
       # We use substituteInPlace after we run `install`
       # -desktop is needed, see:
       # https://www.mathworks.com/matlabcentral/answers/20-how-do-i-make-a-desktop-launcher-for-matlab-in-linux#answer_25
-      exec = "nvidia-offload @out@/bin/matlab -nosoftwareopengl -desktop %F";
+      exec = "@out@/bin/matlab -softwareopengl -desktop %F";
       icon = "matlab";
       # Most of the following are copied from octave's desktop launcher
       categories = [
